@@ -1,0 +1,43 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 451
+        length: 103
+        placeholder_text: "...  # TODO c помощью функции из модуля networkx найти стои\
+      мость кратчайшего пути до последней лестницы"
+        initial_state:
+          length: 103
+          offset: 451
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 657
+        length: 108
+        placeholder_text: "...  # TODO записать взвешенный граф, а лучше написать функ\
+      цию, которая формирует граф по стоимости ступеней"
+        initial_state:
+          length: 108
+          offset: 657
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,40 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 269
+        length: 44
+        placeholder_text: "...  # TODO реализовать рекурсивный алгоритм"
+        initial_state:
+          length: 44
+          offset: 269
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if n < 0:
+                  raise ValueError("Номер числа Фибоначчи должен быть не отрицательным числом")
+          
+              if n == 0:
+                  return 0
+              if n == 1:
+                  return 1
+          
+              return fib_recursive(n - 1) + fib_recursive(n - 2)
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

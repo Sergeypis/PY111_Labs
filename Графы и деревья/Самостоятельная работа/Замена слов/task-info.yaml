@@ -1,0 +1,50 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 94
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 94
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          trie = {}
+              for word in dictionary:
+                  node = trie
+                  for char in word:
+                      if char not in node:
+                          node[char] = {}
+                      node = node[char]
+                  node["#"] = word
+          
+              words = sentence.split()
+              for i, word in enumerate(words):
+                  node = trie
+                  prefix = ""
+                  for char in word:
+                      if char not in node:
+                          break
+                      prefix += char
+                      node = node[char]
+                      if "#" in node:
+                          words[i] = node["#"]
+                          break
+          
+              return " ".join(words)
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

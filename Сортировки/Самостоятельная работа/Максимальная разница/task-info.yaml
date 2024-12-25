@@ -1,0 +1,75 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 71
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 71
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          '''
+              Временная сложность:
+              лучший: O(N)
+              худший: O(NlogN)
+              Сложность по памяти:
+              O(N)
+              '''
+              if len(nums) < 2:
+                  return 0
+          
+              nums.sort()
+              max_gap = 0
+              for i in range(1, len(nums)):
+                  max_gap = max(max_gap, nums[i] - nums[i - 1])
+              return max_gap
+          
+          
+          # Решение с повышенной сложностью
+          '''
+          def maximum_gap(nums: List[int]) -> int:
+              # Временная сложность:
+              # худший: O(N)
+              # Сложность по памяти:
+              # O(N)
+              mi, ma, n = min(nums), max(nums), len(nums)
+              if mi == ma:
+                  return 0  # Все элементы одинаковы
+              bucket_size = math.ceil((ma - mi) / (n - 1))  # Определение гипотетического среднего размера ведра
+              min_bucket = [math.inf] * n  # Заполнение явно наибольшими значениями
+              max_bucket = [-math.inf] * n  # Заполнение явно наименьшими значениями
+              for x in nums:
+                  idx = (x - mi) // bucket_size # Определение индекса в какое ведро можно положить значение
+                  min_bucket[idx] = min(min_bucket[idx], x)  # Определение минимального значения в ведре
+                  max_bucket[idx] = max(max_bucket[idx], x)  # Определение максимального значения в ведре
+          
+              max_gap = bucket_size  # Максимальный зазор всегда больше или равен размеру ведра
+              prev = max_bucket[0]
+              for i in range(1, n):
+                  if min_bucket[i] == math.inf:
+                      continue  # Пропуск пустого ведра
+                  max_gap = max(max_gap, min_bucket[i] - prev)
+                  prev = max_bucket[i]
+              return max_gap
+          '''
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

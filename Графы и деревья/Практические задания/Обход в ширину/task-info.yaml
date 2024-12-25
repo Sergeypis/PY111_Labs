@@ -1,0 +1,76 @@
+type: edu
+files:
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 561
+        length: 38
+        placeholder_text: "...  # TODO реализовать обход в ширину"
+        initial_state:
+          length: 38
+          offset: 561
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          visited = {node: False for node in g.nodes}
+              d = deque()  # начало слева, конец справа
+              path = []
+          
+              d.append(start_node)  # поджигаем узел графа
+              visited[start_node] = True  # если узел "подожжен", то мы его посещали
+              while d:
+                  current_node = d.popleft()
+                  path.append(current_node)
+                  for neighbor in g[current_node]:  # g[current_node] - смежные узлы
+                      if not visited[neighbor]:
+                          d.append(neighbor)  # поджигаем узел графа
+                          visited[neighbor] = True  # если узел "подожжен", то мы его посещали
+          
+              return path
+        selected: false
+        status: Unchecked
+      - offset: 633
+        length: 72
+        placeholder_text: "# TODO записать граф с помощью модуля networkx и прверить о\
+      бход в ширину"
+        initial_state:
+          length: 72
+          offset: 633
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          graph = nx.Graph()
+              graph.add_nodes_from("ABCDEFGHIJ")
+              graph.add_edges_from([
+                  ('A', 'B'),
+                  ('A', 'F'),
+                  ('B', 'G'),
+                  ('F', 'G'),
+                  ('G', 'C'),
+                  ('G', 'H'),
+                  ('G', 'I'),
+                  ('C', 'H'),
+                  ('I', 'H'),
+                  ('H', 'D'),
+                  ('H', 'E'),
+                  ('H', 'J'),
+                  ('E', 'D'),
+              ])
+          
+              print(bfs(graph, "A"))
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

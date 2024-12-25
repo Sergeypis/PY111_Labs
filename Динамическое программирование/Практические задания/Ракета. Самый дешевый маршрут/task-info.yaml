@@ -1,0 +1,47 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 355
+        length: 53
+        placeholder_text: "...  # TODO рассчитать таблицу стоимостей перемещений"
+        initial_state:
+          length: 53
+          offset: 355
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          table = table.copy()
+              n = len(table)
+              m = len(table[0])
+          
+              # Цикл по первому столбцу
+              for row_index in range(n - 1):
+                  table[row_index + 1][0] += table[row_index][0]
+              # Цикл по первой строке
+              for col_index in range(m - 1):
+                  table[0][col_index + 1] += table[0][col_index]
+          
+              for i in range(1, n):
+                  for j in range(1, m):
+                      table[i][j] += min(table[i - 1][j], table[i][j - 1])
+          
+              return table
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

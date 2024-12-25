@@ -1,0 +1,36 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 76
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 76
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          count = 0
+              candidate = None
+          
+              for num in nums:
+                  if count == 0:
+                      candidate = num
+                  count += (1 if num == candidate else -1)
+          
+              return candidate
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

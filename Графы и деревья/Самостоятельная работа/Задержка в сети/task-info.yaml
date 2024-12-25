@@ -1,0 +1,50 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 92
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 92
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          graph = defaultdict(list)
+              for u, v, w in times:
+                  graph[u].append((v, w))
+          
+              dist = [float('inf')] * (n + 1)
+              dist[k] = 0
+          
+              queue = [(0, k)]
+              while queue:
+                  curr_dist, curr = heapq.heappop(queue)
+                  if curr_dist > dist[curr]:
+                      continue
+                  for neighbor, weight in graph[curr]:
+                      if curr_dist + weight < dist[neighbor]:
+                          dist[neighbor] = curr_dist + weight
+                          heapq.heappush(queue, (dist[neighbor], neighbor))
+          
+              max_time = max(dist[1:])
+              return max_time if max_time < float('inf') else -1
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

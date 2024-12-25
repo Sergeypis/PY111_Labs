@@ -1,0 +1,42 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 38
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 38
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if not s:
+                  return 0
+          
+              n = len(s)
+              dp = [0] * (n + 1)
+              dp[0] = 1
+              dp[1] = 1 if s[0] != '0' else 0
+          
+              for i in range(2, n + 1):
+                  if s[i - 1] != '0':
+                      dp[i] += dp[i - 1]
+                  if s[i - 2] == '1' or (s[i - 2] == '2' and s[i - 1] <= '6'):
+                      dp[i] += dp[i - 2]
+          
+              return dp[n]
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

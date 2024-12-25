@@ -1,0 +1,47 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 381
+        length: 61
+        placeholder_text: "...  # TODO реализовать итеративный алгоритм бинарного поис\
+      ка"
+        initial_state:
+          length: 61
+          offset: 381
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          left_border = 0
+              right_border = len(seq) - 1
+          
+              while left_border <= right_border:
+                  middle_index = left_border + (right_border - left_border) // 2
+                  middle_value = seq[middle_index]
+                  if value == middle_value:
+                      while True:
+                          if not 0 <= middle_index - 1 < len(seq) or seq[middle_index - 1] != value:
+                              break
+                          else:
+                              middle_index -= 1
+                      return middle_index
+                  elif middle_value > value:
+                      right_border = middle_index - 1
+                  else:
+                      left_border = middle_index + 1
+          
+              raise ValueError(f"Элемента {value} нет")
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

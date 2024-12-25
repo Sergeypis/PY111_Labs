@@ -1,0 +1,44 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 44
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 44
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if len(s) != len(t):
+                  return False
+          
+              s_dict = {}
+              t_dict = {}
+              for i in range(len(s)):
+                  if s[i] in s_dict:
+                      s_dict[s[i]] += 1
+                  else:
+                      s_dict[s[i]] = 1
+          
+                  if t[i] in t_dict:
+                      t_dict[t[i]] += 1
+                  else:
+                      t_dict[t[i]] = 1
+          
+              return s_dict == t_dict
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

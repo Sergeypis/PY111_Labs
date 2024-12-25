@@ -1,0 +1,38 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 152
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 152
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          low, mid, high = 0, 0, len(nums) - 1
+              while mid <= high:
+                  if nums[mid] == 0:
+                      nums[low], nums[mid] = nums[mid], nums[low]
+                      low += 1
+                      mid += 1
+                  elif nums[mid] == 1:
+                      mid += 1
+                  else:
+                      nums[mid], nums[high] = nums[high], nums[mid]
+                      high -= 1
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

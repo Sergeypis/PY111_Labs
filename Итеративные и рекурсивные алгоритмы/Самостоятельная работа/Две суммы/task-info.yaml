@@ -1,0 +1,31 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 86
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 86
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          dict_ = {target - val: idx for idx, val in enumerate(nums)}
+              for idx, val in enumerate(nums):
+                  if dict_.get(val) and not dict_[val] == idx:
+                      return [dict_[val], idx]
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

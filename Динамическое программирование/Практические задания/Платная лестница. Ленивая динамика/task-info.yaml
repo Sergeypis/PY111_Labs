@@ -1,0 +1,36 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 481
+        length: 40
+        placeholder_text: "...  # TODO реализовать ленивую динамику"
+        initial_state:
+          length: 40
+          offset: 481
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          @lru_cache
+              def lazy_method(stairway, n):
+                  if n == 0 or n == 1:
+                      return stairway[n]
+          
+                  return stairway[n] + min(lazy_method(stairway, n - 1),
+                                           lazy_method(stairway, n - 2))
+          
+              return lazy_method(stairway, len(stairway)-1)
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

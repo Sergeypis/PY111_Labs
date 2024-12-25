@@ -1,0 +1,40 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 495
+        length: 51
+        placeholder_text: "...  # TODO реализовать алгоритм быстрой сортировки"
+        initial_state:
+          length: 51
+          offset: 495
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if not container:
+                  return container
+          
+              pivot = container[0]
+              return (
+                      sort([item for item in container if item < pivot]) +
+                      [item for item in container if item == pivot] +
+                      sort([item for item in container if item > pivot])
+              )
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: quick_sort.gif
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

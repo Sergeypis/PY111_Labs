@@ -1,0 +1,41 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 78
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 78
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if num_rows == 0:
+                  return []
+              triangle = [[1]]
+              for i in range(1, num_rows):
+                  row = [1]
+                  for j in range(1, i):
+                      row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+                  row.append(1)
+                  triangle.append(row)
+              return triangle
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img_2.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

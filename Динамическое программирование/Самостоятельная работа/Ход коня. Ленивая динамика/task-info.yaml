@@ -1,0 +1,52 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 342
+        length: 40
+        placeholder_text: "... # TODO реализуйте подсчет ходов коня"
+        initial_state:
+          length: 40
+          offset: 342
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          rows, cols = shape  # кол-во строк и столбцов отсчет с 1
+          
+              @lru_cache  # @lru_cache(maxsize=None) == lru_cache
+              def get_steps(i, j):
+                  if i == 0 and j == 0:  # левый верхний угол
+                      return 1
+          
+                  if not 0 <= i < rows:  # выпадаю за границы поля для строк
+                      return 0
+          
+                  if not 0 <= j < cols:  # выпадаю за границы поля для строк
+                      return 0
+          
+                  return sum([
+                      get_steps(i - 2, j + 1),
+                      get_steps(i - 2, j - 1),
+                      get_steps(i - 1, j - 2),
+                      get_steps(i + 1, j - 2),
+                  ])
+          
+              return get_steps(rows-1, cols-1)
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

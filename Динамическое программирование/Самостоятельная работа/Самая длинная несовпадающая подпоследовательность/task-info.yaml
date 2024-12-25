@@ -1,0 +1,55 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 74
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 74
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          i, j = 0, 0
+              while i < len(a) and j < len(b):
+                  if a[i] == b[j]:
+                      j += 1
+                  i += 1
+              return j == len(b)
+        selected: false
+        status: Unchecked
+      - offset: 129
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 129
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          strs.sort(key=len, reverse=True)
+              for i, s in enumerate(strs):
+                  flag = True
+                  for j in range(len(strs)):
+                      if i == j:
+                          continue
+                      if is_subsequence(strs[j], s):
+                          flag = False
+                          break
+                  if flag:
+                      return len(s)
+              return -1
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

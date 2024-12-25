@@ -1,0 +1,40 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 81
+        length: 3
+        placeholder_text: '...'
+        initial_state:
+          length: 3
+          offset: 81
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          if not strs:
+                  return ""
+              if len(strs) == 1:
+                  return strs[0]
+          
+              strs.sort()
+              prefix = ""
+              for i in range(len(strs[0])):
+                  if strs[0][i] == strs[-1][i]:
+                      prefix += strs[0][i]
+                  else:
+                      break
+              return prefix
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1

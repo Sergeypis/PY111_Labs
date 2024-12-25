@@ -1,0 +1,44 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 531
+        length: 39
+        placeholder_text: "...  # TODO реализовать обход в глубину"
+        initial_state:
+          length: 39
+          offset: 531
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          visited = {node: False for node in g.nodes}
+              path = []
+          
+              def recursion_dfs(current_node):
+                  visited[current_node] = True
+                  path.append(current_node)
+                  for neighbor in g[current_node]:
+                      if not visited[neighbor]:
+                          recursion_dfs(neighbor)
+          
+              recursion_dfs(start_node)
+          
+              return path
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,43 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 285
+        length: 73
+        placeholder_text: "...  # TODO вычислить sin(x) с помощью разложения сумму бес\
+      конечного ряда"
+        initial_state:
+          length: 73
+          offset: 285
+        initialized_from_dependency: false
+        encrypted_possible_answer: |-
+          def item(n):
+                  """ Подсчет очередного элемента бесконечного ряда Тейлора для sin(x)"""
+                  return (pow(-1, n)) * (pow(x, 2*n+1)/factorial(2*n+1))
+          
+              sum_ = 0
+              for i in count():
+                  current_value = item(i)
+                  sum_ += current_value
+          
+                  if abs(current_value) <= DELTA:
+                      return sum_
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1

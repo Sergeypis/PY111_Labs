@@ -1,0 +1,78 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 204
+        length: 35
+        placeholder_text: "...  # TODO инициализировать список"
+        initial_state:
+          length: 35
+          offset: 204
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 418
+        length: 37
+        placeholder_text: "...  # TODO реализовать метод enqueue"
+        initial_state:
+          length: 37
+          offset: 418
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 679
+        length: 37
+        placeholder_text: "...  # TODO реализовать метод dequeue"
+        initial_state:
+          length: 37
+          offset: 679
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 1198
+        length: 34
+        placeholder_text: "...  # TODO реализовать метод peek"
+        initial_state:
+          length: 34
+          offset: 1198
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 1304
+        length: 35
+        placeholder_text: "...  # TODO реализовать метод clear"
+        initial_state:
+          length: 35
+          offset: 1304
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+      - offset: 1420
+        length: 37
+        placeholder_text: "...  # TODO реализовать метод __len__"
+        initial_state:
+          length: 37
+          offset: 1420
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+status: Unchecked
+record: -1
+solution_hidden: false

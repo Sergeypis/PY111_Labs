@@ -1,0 +1,32 @@
+type: edu
+files:
+  - name: task.py
+    visible: true
+    placeholders:
+      - offset: 203
+        length: 66
+        placeholder_text: "...  # TODO реализовать итеративный алгоритм нахождения фак\
+      ториала"
+        initial_state:
+          length: 66
+          offset: 203
+        initialized_from_dependency: false
+        encrypted_possible_answer: '...'
+        selected: false
+        status: Unchecked
+    learner_created: false
+  - name: tests/test_task.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests/__init__.py
+    visible: false
+    learner_created: false
+  - name: img.png
+    visible: true
+    is_binary: true
+    learner_created: false
+status: Unchecked
+record: -1
