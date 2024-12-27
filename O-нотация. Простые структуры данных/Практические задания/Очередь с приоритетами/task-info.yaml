@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 258
-        length: 152
+        length: 164
         placeholder_text: "...  # TODO использовать deque для реализации очереди с при\
       оритетами"
         initial_state:
@@ -17,7 +17,7 @@ files:
                   }
         selected: true
         status: Solved
-      - offset: 678
+      - offset: 690
         length: 481
         placeholder_text: "...  # TODO реализовать метод enqueue"
         initial_state:
@@ -27,7 +27,7 @@ files:
         encrypted_possible_answer: "self.priority_queue[priority].append(elem)"
         selected: true
         status: Solved
-      - offset: 1375
+      - offset: 1387
         length: 298
         placeholder_text: "...  # TODO реализовать метод dequeue"
         initial_state:
@@ -42,7 +42,7 @@ files:
                   raise IndexError("Извлечение из пустой очереди не возможно")
         selected: true
         status: Solved
-      - offset: 2680
+      - offset: 2692
         length: 207
         placeholder_text: "...  # TODO реализовать метод peek"
         initial_state:
@@ -60,7 +60,7 @@ files:
                   return queue[ind]
         selected: true
         status: Solved
-      - offset: 2959
+      - offset: 2971
         length: 21
         placeholder_text: "...  # TODO реализовать метод clear"
         initial_state:
@@ -72,7 +72,7 @@ files:
                       queue.clear()
         selected: true
         status: Solved
-      - offset: 3061
+      - offset: 3073
         length: 56
         placeholder_text: "...  # TODO реализовать метод __len__"
         initial_state:
@@ -100,5 +100,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: "Wed, 25 Dec 2024 17:55:21 UTC"
+  time: "Thu, 26 Dec 2024 13:00:27 UTC"
 record: -1

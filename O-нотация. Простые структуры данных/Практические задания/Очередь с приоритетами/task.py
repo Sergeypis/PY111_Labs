@@ -13,7 +13,7 @@ class PriorityQueue:
 
     def __init__(self):
         # self.deque = deque  # TODO использовать deque для реализации очереди с приоритетами
-        self.queue_pr: dict = {}  # Словарь очередей с приоритетом
+        self.queue_pr: dict[int, deque] = {}  # Словарь очередей с приоритетом
 
     def enqueue(self, elem: Any, priority: int = 0) -> None:
         """
@@ -27,13 +27,13 @@ class PriorityQueue:
         if not self.HIGH_PRIORITY <= priority <= self.LOW_PRIORITY:
             raise IndexError("Queue priority out of range")
 
-        diq = self.queue_pr.get(priority, None)
-        if diq is None:
+        deq = self.queue_pr.get(priority, None)
+        if deq is None:
             deq = deque()
             deq.append(elem)
             self.queue_pr[priority] = deq
         else:
-            diq.append(elem)
+            deq.append(elem)
 
     def dequeue(self) -> Any:
         """
