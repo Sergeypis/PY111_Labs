@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 203
-        length: 66
+        length: 56
         placeholder_text: "...  # TODO реализовать итеративный алгоритм нахождения фак\
       ториала"
         initial_state:
@@ -12,8 +12,8 @@ files:
           offset: 203
         initialized_from_dependency: false
         encrypted_possible_answer: '...'
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -28,5 +28,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 09 Jan 2025 13:34:45 UTC"
 record: -1

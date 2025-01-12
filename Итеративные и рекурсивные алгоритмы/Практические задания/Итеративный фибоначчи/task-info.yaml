@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 269
-        length: 57
+        length: 47
         placeholder_text: "...  # TODO написать итеративный алгоритм чисел Фибоначчи"
         initial_state:
           length: 57
@@ -25,8 +25,8 @@ files:
                   a, b = b, a + b
           
               return b
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -37,5 +37,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 12 Jan 2025 18:55:02 UTC"
 record: -1

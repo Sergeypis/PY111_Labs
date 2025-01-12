@@ -4,7 +4,7 @@ files:
     visible: true
     placeholders:
       - offset: 614
-        length: 49
+        length: 39
         placeholder_text: "...  # TODO реализовать алгоритм бинарного поиска"
         initial_state:
           length: 49
@@ -32,8 +32,8 @@ files:
                   left_border = middle_index + 1
           
               return binary_search(value, seq, left_border, right_border)
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -48,5 +48,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 12 Jan 2025 20:26:52 UTC"
 record: -1
