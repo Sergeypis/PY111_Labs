@@ -16,7 +16,7 @@ files:
                   if dict_.get(val) and not dict_[val] == idx:
                       return [dict_[val], idx]
         selected: true
-        status: Failed
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -27,8 +27,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: "[0, 0] not found in [[1, 2], [2, 1]]"
-  time: "Mon, 13 Jan 2025 20:35:30 UTC"
+  message: Congratulations!
+  time: "Wed, 15 Jan 2025 15:35:48 UTC"
 record: -1

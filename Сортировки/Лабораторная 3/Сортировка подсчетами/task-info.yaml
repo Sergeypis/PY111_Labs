@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 486
+      - offset: 526
         length: 44
         placeholder_text: "...  # TODO реализовать алгоритм сортировки подсчетами"
         initial_state:
