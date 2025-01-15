@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 """
 1. Бинарный поиск итеративный
 """
@@ -87,6 +90,21 @@ def binary_search_recursive(arr, item, min_idx=0, max_idx=None):
     else:
         return  None
 
+"""
+7. Сравнение списков.
+"""
+def compare_lists(mass_1: list[int], mass_2: list[int]) -> bool:
+    if len(mass_1) != len(mass_2):
+        return False
+    dict_mass_1 = defaultdict(list)
+    dict_mass_2 = defaultdict(list)
+    list(dict_mass_1[val].append(idx) for idx, val in enumerate(mass_1))
+    list(dict_mass_2[val].append(idx) for idx, val in enumerate(mass_2))
+    for idx, val in dict_mass_1.items():
+        if dict_mass_2.get(idx, None) is None or len(dict_mass_2[idx]) != len(val):
+            return False
+    return True
+
 # 1. Бинарный поиск (О(logN))
 # print(binary_search([1, 3, 4, 7, 9], 4))
 # print(binary_search([1, 3, 4, 7, 8, 10, 20, 39], 1))
@@ -107,8 +125,15 @@ def binary_search_recursive(arr, item, min_idx=0, max_idx=None):
 # print(max_recursive([23, -44, 6]))
 
 # 6. Бинарный поиск рекурсивный
-print(binary_search_recursive([1, 3, 4, 7, 9], 4))
-print(binary_search_recursive([1, 3, 4, 7, 8, 10, 20, 39], 1))
-print(binary_search_recursive([1, 3, 4, 7, 9], 0))
-print(binary_search_recursive([1, 3, 4, 7, 9], 8))
-print(binary_search_recursive(['a', 'a', 'b', 'eee', 'ewq', 'q', 'w', 'zzz'], 'ewq'))
+# print(binary_search_recursive([1, 3, 4, 7, 9], 4))
+# print(binary_search_recursive([1, 3, 4, 7, 8, 10, 20, 39], 1))
+# print(binary_search_recursive([1, 3, 4, 7, 9], 0))
+# print(binary_search_recursive([1, 3, 4, 7, 9], 8))
+# print(binary_search_recursive(['a', 'a', 'b', 'eee', 'ewq', 'q', 'w', 'zzz'], 'ewq'))
+
+# 7. Сравнение списков
+assert compare_lists([1,1,1,2,3,5], [3,5,2,1,1,1]) == True
+assert compare_lists([], [1,4]) == False
+assert compare_lists([1,3,5], []) == False
+assert compare_lists([3,3,3,3], [3,3,3,3]) == True
+assert compare_lists([], []) == True

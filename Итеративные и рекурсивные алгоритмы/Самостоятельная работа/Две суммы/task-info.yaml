@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 86
-        length: 3
+      - offset: 118
+        length: 0
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -15,8 +15,8 @@ files:
               for idx, val in enumerate(nums):
                   if dict_.get(val) and not dict_[val] == idx:
                       return [dict_[val], idx]
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Failed
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -27,5 +27,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: "[0, 0] not found in [[1, 2], [2, 1]]"
+  time: "Mon, 13 Jan 2025 20:35:30 UTC"
 record: -1

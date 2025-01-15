@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 285
-        length: 73
+      - offset: 326
+        length: 63
         placeholder_text: "...  # TODO вычислить sin(x) с помощью разложения сумму бес\
       конечного ряда"
         initial_state:
@@ -23,8 +23,8 @@ files:
           
                   if abs(current_value) <= DELTA:
                       return sum_
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -39,5 +39,8 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 13 Jan 2025 09:30:26 UTC"
 record: -1

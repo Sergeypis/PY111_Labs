@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 72
-        length: 3
+      - offset: 68
+        length: 0
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -15,8 +15,8 @@ files:
               while left < right:
                   s[left], s[right] = s[right], s[left]
                   left, right = left + 1, right - 1
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -27,5 +27,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 13 Jan 2025 09:54:24 UTC"
 record: -1

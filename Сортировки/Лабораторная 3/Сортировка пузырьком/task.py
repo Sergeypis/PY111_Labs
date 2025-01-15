@@ -13,4 +13,20 @@ def sort(container: Sequence[int]) -> Sequence[int]:
     :param container: Массив, который надо отсортировать
     :return: Отсортированный в порядке возрастания массив
     """
-    ...  # TODO реализовать алгоритм сортировки пузырьком
+    # реализовать алгоритм сортировки пузырьком
+
+    x = 0
+    change_flag = True
+    while x < len(container) - 1 and change_flag:
+        change_flag = False
+        for idx in range(len(container) - 1 - x):
+            val_1 = container[idx]
+            val_2 = container[idx + 1]
+            if val_1 > val_2:
+                container[idx], container[idx + 1] = val_2, val_1
+                change_flag = True
+        x += 1
+    return container
+
+
+print(sort([6,5,3,1,8,7,2,4]))
