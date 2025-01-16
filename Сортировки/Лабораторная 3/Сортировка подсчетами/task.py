@@ -20,7 +20,7 @@ def sort(container: Sequence[int]) -> Sequence[int]:
         return container
     max_val = max(container)
     temp_list = [0] * (max_val + 1)
-    res = []
+    # res = []
 
     for val in container:
         temp_list[val] += 1
@@ -28,13 +28,14 @@ def sort(container: Sequence[int]) -> Sequence[int]:
     # for idx, val in enumerate(temp_list):
     #     if val != 0:
     #         res.extend([idx] * val)
+    # return res
 
     # data_gen = ([idx] * val for idx, val in enumerate(temp_list) if val > 0)
     # data_list = [[idx] * val for idx, val in enumerate(temp_list) if val > 0]
     # print(sys.getsizeof(data_gen), sys.getsizeof(data_list))
 
     return reduce(lambda x, y: x+y, ([idx] * val for idx, val in enumerate(temp_list) if val > 0))
-    return [[idx] * val for idx, val in enumerate(temp_list) if val > 0]
-    # return res
+    # return [[idx] * val for idx, val in enumerate(temp_list) if val > 0]
+
 
 print(sort([3,0,1,6,4,22,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]))
