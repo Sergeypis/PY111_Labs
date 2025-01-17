@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 495
-        length: 51
+      - offset: 188
+        length: 1186
         placeholder_text: "...  # TODO реализовать алгоритм быстрой сортировки"
         initial_state:
           length: 51
@@ -20,7 +20,7 @@ files:
                       [item for item in container if item == pivot] +
                       sort([item for item in container if item > pivot])
               )
-        selected: false
+        selected: true
         status: Failed
     learner_created: false
   - name: tests/test_task.py
@@ -38,8 +38,6 @@ files:
     learner_created: false
 status: Failed
 feedback:
-  message: "[] != None : Пустая последовательность должна сортироваться :)"
-  time: "Wed, 15 Jan 2025 16:30:19 UTC"
-  expected: "[]"
-  actual: None
+  message: Error
+  time: "Fri, 17 Jan 2025 19:14:34 UTC"
 record: -1
