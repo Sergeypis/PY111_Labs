@@ -33,7 +33,7 @@ files:
                           r -= 1
               return result
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -44,5 +44,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 21 Jan 2025 11:29:39 UTC"
 record: -1

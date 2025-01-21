@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 44
-        length: 3
+      - offset: 40
+        length: 0
         placeholder_text: '...'
         initial_state:
           length: 3
@@ -29,7 +29,7 @@ files:
           
               return s_dict == t_dict
         selected: false
-        status: Unchecked
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -40,5 +40,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Tue, 21 Jan 2025 08:42:32 UTC"
 record: -1

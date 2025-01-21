@@ -3,16 +3,16 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 79
-        length: 3
+      - offset: 75
+        length: 0
         placeholder_text: '...'
         initial_state:
           length: 3
           offset: 79
         initialized_from_dependency: false
         encrypted_possible_answer: return len(nums) > len(set(nums))
-        selected: false
-        status: Unchecked
+        selected: true
+        status: Solved
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -23,5 +23,8 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 20 Jan 2025 13:09:25 UTC"
 record: -1

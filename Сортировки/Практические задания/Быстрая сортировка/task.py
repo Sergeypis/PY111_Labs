@@ -81,6 +81,7 @@ def sort(container: List[int], start: int = None, end: int = None) -> None:
 # [2,3,1] l-4, r-3
 # print(sort([2,3,1]))
 # sort([4, -3, 1, 2, 5])
-container = [4, -3, 1, 2, 5]
+# container = [4, -3, 1, 2, 5]
+container = [9]
 sort(container)
 print(container)

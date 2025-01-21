@@ -38,6 +38,8 @@ files:
     learner_created: false
 status: Failed
 feedback:
-  message: Error
-  time: "Fri, 17 Jan 2025 19:14:34 UTC"
+  message: "[] != None : Пустая последовательность должна сортироваться :)"
+  time: "Mon, 20 Jan 2025 12:38:18 UTC"
+  expected: "[]"
+  actual: None
 record: -1
