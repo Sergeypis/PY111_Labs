@@ -9,7 +9,21 @@ def stairway_path(count_stairs: int) -> List[int]:
     :param count_stairs: Количество ступеней
     :return: Количество маршрутов до каждой ступени
     """
-    ...  # TODO найти количество маршрутов до каждой ступени
+    # найти количество маршрутов до каждой ступени
+
+    if count_stairs < 0:
+        raise ValueError("Ошибка. Количество ступеней не может быть отрицательным.")
+
+    state = []
+    for n in range(count_stairs + 1):
+        if n == 0:
+            state.append(0)
+        elif n == 1:
+            state.append(1)
+        else:
+            state.append(state[n - 1] + state[n - 2])
+
+    return state
 
 
 if __name__ == '__main__':
