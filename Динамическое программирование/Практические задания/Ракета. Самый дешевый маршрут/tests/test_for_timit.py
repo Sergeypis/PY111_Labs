@@ -1,9 +1,15 @@
 from unittest import TestCase
+import sys
+import os
 
-from ..task import rocket_coasts_recursive_inplace
+PATH = os.getcwd()
+sys.path.append(os.path.dirname(PATH))
+
+from task import rocket_coasts_recursive_inplace
+
 
 class TestTime(TestCase):
-    def timeit_(self):
+    def test_timeit_(self):
         coasts_ceil = [
             [2, 7, 9, 3],
             [12, 4, 1, 9],

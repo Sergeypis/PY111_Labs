@@ -18,4 +18,21 @@ def bfs(g: nx.Graph, start_node: Hashable) -> List[Hashable]:
 
 
 if __name__ == '__main__':
-    # TODO записать граф с помощью модуля networkx и прверить обход в ширину
+    # записать граф с помощью модуля networkx и прверить обход в ширину
+
+    node_list = {
+        'A': ['B', 'F'],
+        'B': ['A', 'G'],
+        'F': ['A', 'G'],
+        'G': ['B', 'F', 'I', 'H', 'C'],
+        'I': ['H', 'G'],
+        'H': ['I', 'D', 'E', 'J', 'C', 'G'],
+        'C': ['H', 'G'],
+        'J': ['H'],
+        'E': ['H', 'D'],
+        'D': ['E', 'H']
+    }
+    graph = nx.Graph()
+    graph.add_nodes_from(node_list)
+    print(graph.nodes)
+    print(graph.edges)

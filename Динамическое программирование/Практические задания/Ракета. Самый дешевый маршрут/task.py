@@ -1,6 +1,6 @@
 from functools import lru_cache
 from typing import List
-
+import copy
 
 # cache_dict: dict[int,dict[int,int]] = {}
 
@@ -124,7 +124,7 @@ def rocket_coasts_recursive_inplace(table: List[List[int]]) -> None:
     :return: Таблицу стоимостей перемещения по клеткам или миниммальная стоимость последней клетки
     """
     # рассчитать таблицу стоимостей перемещений
-
+    table_res = copy.deepcopy(table)
     rows = len(table)
     cols = len(table[0])
 
@@ -140,23 +140,28 @@ def rocket_coasts_recursive_inplace(table: List[List[int]]) -> None:
             result = table[row][col] + lazy_search_min(row - 1, col)
         else:
             result = table[row][col] + min(lazy_search_min(row - 1, col), lazy_search_min(row, col - 1))
-        table[row][col] = result
+        table_res[row][col] = result
 
         return result
 
     min_cost = lazy_search_min(rows - 1, cols - 1)
+    # print(table)
+    # print(table_res)
 
 
 if __name__ == '__main__':
+    import time
     coasts_ceil = [
-        [2, 7, 9, 3],
-        [12, 4, 1, 9],
-        [1, 5, 2, 5]
+        [2, 7, 9, 3]*50,
+        [12, 4, 1, 9]*50,
+        [1, 5, 2, 5]*50
     ]
     # total_coasts = rocket_coasts(coasts_ceil)
     # total_coasts = rocket_coasts_recursive_cache(coasts_ceil)
     # print(total_coasts[-1][-1])  # 21
     # print(total_coasts)
-
+    t1 = time.monotonic()
+    # time.sleep(0.01)
     rocket_coasts_recursive_inplace(coasts_ceil)
+    print(f"{time.monotonic() - t1:.9f}")
     print(coasts_ceil)

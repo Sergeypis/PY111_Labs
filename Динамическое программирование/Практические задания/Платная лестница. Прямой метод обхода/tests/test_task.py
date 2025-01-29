@@ -1,6 +1,6 @@
 import unittest
 
-from task import stairway_path
+from ..task import stairway_path
 
 
 class TestCase(unittest.TestCase):
