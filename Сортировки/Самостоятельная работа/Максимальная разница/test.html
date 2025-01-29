@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StART - Художественная студия</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background-image: url('path_to_your_hero_image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Header -->
+    <header class="bg-green-600 text-white p-4 flex justify-between items-center">
+        <div class="logo">
+            <h1 class="text-2xl font-bold">StART</h1>
+        </div>
+        <div class="contact-info text-right">
+            <p>м. Звездная</p>
+            <p>м. пр. Просвещения</p>
+            <p>м. Международная, пос. Шушары</p>
+            <p>+7 (920) 11-99-766</p>
+            <p>+7 (911) 965-13-17</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-green-500 text-white p-4">
+        <ul class="flex justify-center space-x-8">
+            <li><a href="#" class="hover:underline">Курсы</a></li>
+            <li><a href="#" class="hover:underline">Мастер-классы</a></li>
+            <li><a href="#" class="hover:underline">Расписание</a></li>
+            <li><a href="#" class="hover:underline">Цены</a></li>
+            <li><a href="#" class="hover:underline">О нас</a></li>
+            <li><a href="#" class="hover:underline">Арт-вечеринки</a></li>
+            <li><a href="#" class="hover:underline">Подарочные сертификаты</a></li>
+            <li><a href="#" class="hover:underline">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sub-navigation -->
+    <div class="bg-green-400 text-white p-4">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="#" class="hover:underline">Мастер-классы</a></li>
+            <li><a href="#" class="hover:underline">Дошкольникам</a></li>
+            <li><a href="#" class="hover:underline">Школьникам</a></li>
+            <li><a href="#" class="hover:underline">Взрослым</a></li>
+            <li><a href="#" class="hover:underline">Живопись</a></li>
+            <li><a href="#" class="hover:underline">Арт-вечеринки</a></li>
+            <li><a href="#" class="hover:underline">Подарочные сертификаты</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex flex-col items-center justify-center text-center p-4">
+        <h1 class="text-5xl font-bold text-white mb-4">Рисование для взрослых и детей</h1>
+        <p class="text-2xl text-white mb-8">Курсы на любой вкус!</p>
+        <div class="space-x-4">
+            <a href="#" class="bg-white text-green-600 px-6 py-3 rounded-full hover:bg-green-600 hover:text-white">Подробнее</a>
+            <a href="#" class="bg-white text-green-600 px-6 py-3 rounded-full hover:bg-green-600 hover:text-white">Записаться</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="path_to_your_preschool_image.jpg" alt="Занятия для дошкольников" class="w-full h-48 object-cover mb-4">
+                <h2 class="text-xl font-bold mb-2">Занятия для дошкольников</h2>
+                <p class="text-gray-600">Описание занятий для дошкольников.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="path_to_your_school_image.jpg" alt="Занятия для школьников" class="w-full h-48 object-cover mb-4">
+                <h2 class="text-xl font-bold mb-2">Занятия для школьников</h2>
+                <p class="text-gray-600">Описание занятий для школьников.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="path_to_your_adult_image.jpg" alt="Подготовка к поступлению в художественное заведение" class="w-full h-48 object-cover mb-4">
+                <h2 class="text-xl font-bold mb-2">Подготовка к поступлению в художественное заведение</h2>
+                <p class="text-gray-600">Описание подготовки к поступлению.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="path_to_your_art_party_image.jpg" alt="Арт-вечеринки" class="w-full h-48 object-cover mb-4">
+                <h2 class="text-xl font-bold mb-2">Арт-вечеринки</h2>
+                <p class="text-gray-600">Описание арт-вечеринок.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white p-4 text-center">
+        <p>&copy; 2023 StART. Все права защищены.</p>
+    </footer>
+</body>
+</html>

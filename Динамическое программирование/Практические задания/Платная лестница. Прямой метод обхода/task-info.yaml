@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 461
-        length: 34
+      - offset: 463
+        length: 44
         placeholder_text: "...  # TODO реализовать прямой метод расчета"
         initial_state:
           length: 44
@@ -25,7 +25,7 @@ files:
                   coast[current_step] = stairway[current_step] + min(coast[current_step - 1], coast[current_step - 2])
           
               return coast[-1]
-        selected: true
+        selected: false
         status: Solved
     learner_created: false
   - name: tests/test_task.py
@@ -40,5 +40,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: "Wed, 22 Jan 2025 18:12:49 UTC"
+  time: "Thu, 23 Jan 2025 10:34:18 UTC"
 record: -1

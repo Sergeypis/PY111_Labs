@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/VirtualEnvironment" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (PY111_Labs) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (Py111_lab)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

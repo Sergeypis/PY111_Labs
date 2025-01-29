@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 481
-        length: 40
+      - offset: 588
+        length: 30
         placeholder_text: "...  # TODO реализовать ленивую динамику"
         initial_state:
           length: 40
@@ -20,7 +20,7 @@ files:
                                            lazy_method(stairway, n - 2))
           
               return lazy_method(stairway, len(stairway)-1)
-        selected: false
+        selected: true
         status: Unchecked
     learner_created: false
   - name: tests/test_task.py
@@ -32,5 +32,12 @@ files:
   - name: tests/__init__.py
     visible: false
     learner_created: false
+  - name: task.py.lprof
+    visible: true
+    learner_created: true
 status: Unchecked
+feedback:
+  message: "No tests have run. For more information, see <a href=\"https://plugins.jetbrains.com/plugin/10081-jetbrains-academy/docs/troubleshooting-guide.html#no_tests_have_run\"\
+    >the Troubleshooting guide</a>"
+  time: "Tue, 28 Jan 2025 09:32:46 UTC"
 record: -1

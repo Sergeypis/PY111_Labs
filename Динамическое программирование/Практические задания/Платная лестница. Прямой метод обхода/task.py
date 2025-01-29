@@ -1,5 +1,6 @@
 import math
 from typing import Union, Sequence
+import timeit
 
 
 def stairway_path(stairway: Sequence[Union[float, int]]) -> Union[float, int]:

@@ -3,8 +3,8 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 355
-        length: 53
+      - offset: 483
+        length: 43
         placeholder_text: "...  # TODO рассчитать таблицу стоимостей перемещений"
         initial_state:
           length: 53
@@ -27,7 +27,7 @@ files:
                       table[i][j] += min(table[i - 1][j], table[i][j - 1])
           
               return table
-        selected: false
+        selected: true
         status: Unchecked
     learner_created: false
   - name: tests/test_task.py
@@ -44,4 +44,8 @@ files:
     is_binary: true
     learner_created: false
 status: Unchecked
+feedback:
+  message: "No tests have run. For more information, see <a href=\"https://plugins.jetbrains.com/plugin/10081-jetbrains-academy/docs/troubleshooting-guide.html#no_tests_have_run\"\
+    >the Troubleshooting guide</a>"
+  time: "Wed, 29 Jan 2025 11:30:26 UTC"
 record: -1
