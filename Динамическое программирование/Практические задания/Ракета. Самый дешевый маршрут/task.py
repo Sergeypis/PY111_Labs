@@ -112,7 +112,7 @@ def rocket_coasts_recursive_cache(table: List[List[int]]) -> List[List[int]]:
     return new_table
 
 
-def rocket_coasts_recursive_inplace(table: List[List[int]]) -> List[List[int]]:
+def rocket_coasts_recursive_inplace(table: List[List[int]]) -> None:
     """
 
     Просчитать минимальные стоимости маршрутов до каждой клетки с учетом возможных перемещений.

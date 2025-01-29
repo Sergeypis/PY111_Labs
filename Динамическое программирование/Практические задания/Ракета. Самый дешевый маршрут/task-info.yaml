@@ -7,8 +7,8 @@ files:
         length: 43
         placeholder_text: "...  # TODO рассчитать таблицу стоимостей перемещений"
         initial_state:
-          length: 53
-          offset: 355
+          length: 43
+          offset: 483
         initialized_from_dependency: false
         encrypted_possible_answer: |-
           table = table.copy()
@@ -28,7 +28,7 @@ files:
           
               return table
         selected: true
-        status: Unchecked
+        status: Failed
     learner_created: false
   - name: tests/test_task.py
     visible: false
@@ -43,9 +43,11 @@ files:
     visible: true
     is_binary: true
     learner_created: false
-status: Unchecked
+  - name: tests/test_for_timit.py
+    visible: true
+    learner_created: true
+status: Failed
 feedback:
-  message: "No tests have run. For more information, see <a href=\"https://plugins.jetbrains.com/plugin/10081-jetbrains-academy/docs/troubleshooting-guide.html#no_tests_have_run\"\
-    >the Troubleshooting guide</a>"
-  time: "Wed, 29 Jan 2025 11:30:26 UTC"
+  message: Error
+  time: "Wed, 29 Jan 2025 12:23:27 UTC"
 record: -1
