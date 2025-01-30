@@ -13,8 +13,7 @@ def car_paths(n: int, m: int) -> List[List[int]]:
     # решить задачу с помощью динамического программирования
 
     # state_tbl = [[0 for _ in range(m)] for _ in range(n)]
-    # state_tbl = [[0]*m for _ in range(n)]
-    state_tbl = [[]]
+    state_tbl = [[0]*m for _ in range(n)]
 
     for row in range(n):
         for col in range(m):
