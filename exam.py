@@ -96,8 +96,22 @@ def find_min_cost_path(
 # 7. Аренда ракет
 
 def rocket_rental(rent_list: List[tuple[int, int]]) -> bool:
+    """
+    Каждый день к вам приходит список заявок на использование ракет в виде:
+    [(2, 3), (3, 7), (8, 9), (1, 2), (9, 15), (23, 24), (16, 20)]. Вывести ответ, хватит ли вам одной ракеты,
+    чтобы удовлетворить все заявки на этот день
 
+    :param rent_list: Список заявок
+    :return: True или False
+    """
+    rent_list.sort(key=lambda x: x[1])
+    app_end = 0
+    for start, end in rent_list:
+        if app_end > start:
+            return False
+        app_end = end
 
+    return True
 
 
 if __name__ == '__main__':
