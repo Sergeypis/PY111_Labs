@@ -1,12 +1,10 @@
 from typing import Union, List
 
 import networkx as nx
-from networkx.algorithms.shortest_paths.generic import shortest_path_length
-from networkx.algorithms.threshold import shortest_path
 
 
 def build_graph(cost_node: tuple[int,...]) -> nx.DiGraph:
-    def edges_list_generator():
+    def edges_pair_generator():
         nodes_count = len(cost_node)
         a = iter(range(1, nodes_count))
         b = iter(range(0, nodes_count))
@@ -36,7 +34,7 @@ def build_graph(cost_node: tuple[int,...]) -> nx.DiGraph:
 
     g = nx.DiGraph()
     # g.add_weighted_edges_from(edges_list_generator())
-    for a, b, cost in edges_list_generator():
+    for a, b, cost in edges_pair_generator():
         g.add_edge(a, b, cost=cost)
 
     return g

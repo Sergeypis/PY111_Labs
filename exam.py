@@ -1,5 +1,6 @@
 from functools import reduce
 from typing import List
+import networkx as nx
 
 import random
 
@@ -55,11 +56,76 @@ def counting_sort(mass: List[int]) -> List[int]:
     return reduce(lambda x, y: x+y, ([idx + MIN_NUM] * val for idx, val in enumerate(temp_list) if val > 0))
 
 
-if __name__ == '__main__':
-    # print(counting(n=90, k=5))  # 2.
+# 4. Навигатор на сетке
 
-    MIN_NUM = 13
-    MAX_NUM = 26
-    LENGTHS = 10 ** 6
-    mass: List[int] = [random.randint(MIN_NUM, MAX_NUM) for _ in range(LENGTHS)]
-    print(counting_sort(mass))
+def build_graph(grid):
+    G = nx.DiGraph()
+    rows, cols = len(grid), len(grid[0])
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
+    for row in range(rows):
+        for col in range(cols):
+            for dr, dc in directions:
+                new_row, new_col = row + dr, col + dc
+                if 0 <= new_row < rows and 0 <= new_col < cols:
+                    # print((row, col), (new_row, new_col), grid[new_row][new_col])
+                    G.add_edge((row, col), (new_row, new_col), weight=grid[new_row][new_col])
+
+    return G
+
+def find_min_cost_path(
+        grid: List[List[int]],
+        start: tuple[int, int],
+        end: tuple[int, int]
+) -> tuple[int, List[tuple[int, int]]]:
+    """
+    Дана плоская квадратная двумерная сетка (массив), на которой определена стоимость захода в каждую ячейку
+    (все стоимости положительные). Необходимо найти путь минимальной стоимости из заданной ячейки в заданную ячейку
+    и вывести этот путь.
+
+    :param grid: Массив
+    :param start: Начальная ячейка
+    :param end: Конечная ячейка
+    :return:
+    """
+    G = build_graph(grid)
+    min_cost = nx.dijkstra_path_length(G, start, end, weight='weight')
+    path = nx.dijkstra_path(G, start, end, weight='weight')
+    return min_cost, path
+
+# 7. Аренда ракет
+
+def rocket_rental(rent_list: List[tuple[int, int]]) -> bool:
+
+
+
+
+if __name__ == '__main__':
+# 2. Считалочка
+    # print(counting(n=90, k=5))
+
+# 8. Сортировка
+    # MIN_NUM = 13
+    # MAX_NUM = 26
+    # LENGTHS = 10 ** 6
+    # mass: List[int] = [random.randint(MIN_NUM, MAX_NUM) for _ in range(LENGTHS)]
+    # print(counting_sort(mass))
+
+# 4. Навигатор на сетке
+#     grid = [
+#         [1, 3, 1],
+#         [1, 5, 1],
+#         [4, 2, 1]
+#     ]
+#     start = (0, 0)
+#     end = (2, 1)
+#
+#     min_cost, path = find_min_cost_path(grid, start, end)
+#     print(f"Минимальная стоимость пути: {min_cost}")
+#     print(f"Путь: {path}")
+
+# 7. Аренда ракет
+#     rent_list = [(2, 3), (3, 7), (4, 6), (1, 2)]
+    rent_list = [(2, 3), (3, 7), (8, 9), (1, 2), (9, 15), (23, 24), (16, 20)]
+    res = rocket_rental(rent_list)
+    print(f"Одна ракета удовлетворит все заяыки на этот день: {res}")
