@@ -1,3 +1,9 @@
+from functools import reduce
+from typing import List
+
+import random
+
+
 # 2. Считалочка
 
 def counting(n: int, k: int) -> int:
@@ -27,5 +33,33 @@ def counting(n: int, k: int) -> int:
     return humans[0]
 
 
+# 3. Посчитать число компонент связности графа
+
+
+# 8. Сортировка
+def counting_sort(mass: List[int]) -> List[int]:
+    """
+    Дано: массив из 10**6 целых чисел, каждое из которых лежит на отрезке [13, 25].
+    Задача: отсортировать массив наиболее эффективным способом
+
+    :param mass: массив из 10**6 целых чисел
+    :return: отсортированный массив
+    """
+    diff = MAX_NUM - MIN_NUM
+    temp_list = [0] * diff
+    if not mass:
+        return []
+    for val in mass:
+        temp_list[val - MIN_NUM - 1] += 1
+
+    return reduce(lambda x, y: x+y, ([idx + MIN_NUM] * val for idx, val in enumerate(temp_list) if val > 0))
+
+
 if __name__ == '__main__':
-    print(counting(n=90, k=5))
+    # print(counting(n=90, k=5))  # 2.
+
+    MIN_NUM = 13
+    MAX_NUM = 26
+    LENGTHS = 10 ** 6
+    mass: List[int] = [random.randint(MIN_NUM, MAX_NUM) for _ in range(LENGTHS)]
+    print(counting_sort(mass))
