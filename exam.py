@@ -1,6 +1,8 @@
 from functools import reduce
-from typing import List
+from typing import List, Any
 import networkx as nx
+import matplotlib.pyplot as plt
+from bokeh.palettes import Spectral
 
 import random
 
@@ -73,6 +75,7 @@ def build_graph(grid):
 
     return G
 
+
 def find_min_cost_path(
         grid: List[List[int]],
         start: tuple[int, int],
@@ -95,6 +98,7 @@ def find_min_cost_path(
 
 # 7. Аренда ракет
 
+
 def rocket_rental(rent_list: List[tuple[int, int]]) -> bool:
     """
     Каждый день к вам приходит список заявок на использование ракет в виде:
@@ -112,6 +116,105 @@ def rocket_rental(rent_list: List[tuple[int, int]]) -> bool:
         app_end = end
 
     return True
+
+
+# 3. Число компонент связности
+
+def create_graph():
+    nodes = ['A', 'B', 'C', 'D', 'E', 'G', 'F']
+    edges = [
+        ('A', 'B'),
+        ('B', 'C'),
+        ('C', 'D'),
+        ('F', 'G')
+    ]
+
+    plt.figure(figsize=(8, 8))
+    g = nx.Graph()
+    g.add_nodes_from(nodes)
+    g.add_edges_from(edges)
+    pos = nx.spring_layout(g)  # Шаблон вывода графа
+    options = {  # Опции отрисовки
+        'node_color': 'yellow',
+        # 'node_color': Spectral[10],
+        'node_size': 600,
+        'width': 1,
+        # 'arrowstyle': '-|>',
+        # 'arrowsize': 18,
+        'edge_color': 'blue',
+    }
+    # print(graph.nodes)
+    # print(graph.edges)
+    nx.draw_networkx(
+        G=g,
+        pos=pos,
+        # arrows=True
+        with_labels=True,
+        **options
+    )
+
+    ax = plt.gca()  # Очерчивание узлов
+    ax.collections[0].set_edgecolor("#000000")
+
+    return g
+
+
+class Stack:
+    def __init__(self):
+        self.__stack = []
+
+    def push(self, elem: Any) -> None:
+        self.__stack.append(elem)
+
+    def pop(self) -> Any:
+        if len(self.__stack):
+            return self.__stack.pop(-1)
+        else:
+            raise IndexError("Error, stack is empty!")
+
+    def peek(self, ind: int) -> Any:
+        if not isinstance(ind, int):
+            raise TypeError(f"Error type index: {type(ind).__name__}")
+        if not 0 <= ind < len(self.__stack):
+            raise IndexError(f"Index {ind=} out of range!")
+        ind = -1 - ind
+        return self.__stack[ind]
+
+    def clear(self) -> None:
+        self.__stack.clear()
+
+    def __len__(self) -> int:
+        return len(self.__stack)
+
+
+def graph_connected_components() -> int:
+    """
+    Дан граф, состоящий из 2+ связных подграфов, которые не связаны между собой.
+    Задача: посчитать число компонент связности графа, т.е. количество таких подграфов
+
+    :return: Число компонент связности графа
+    """
+
+    num_group = 0
+    stack = Stack()
+    graph = create_graph()
+    visited = {node: 0 for node in graph.nodes}
+    nodes = [node for node in graph.nodes]
+
+    while nodes:
+        stack.push(nodes[0])
+        num_group += 1
+        while stack.__len__():
+            curr_node = stack.pop()
+            nodes.remove(curr_node)
+            visited[curr_node] = num_group
+            curr_node_neightbors = graph[curr_node]
+            for nb in curr_node_neightbors:
+                if visited[nb] == 0:
+                    stack.push(nb)
+            # print(visited)
+    return max(visited.values())
+
 
 
 if __name__ == '__main__':
@@ -140,6 +243,10 @@ if __name__ == '__main__':
 
 # 7. Аренда ракет
 #     rent_list = [(2, 3), (3, 7), (4, 6), (1, 2)]
-    rent_list = [(2, 3), (3, 7), (8, 9), (1, 2), (9, 15), (23, 24), (16, 20)]
-    res = rocket_rental(rent_list)
-    print(f"Одна ракета удовлетворит все заяыки на этот день: {res}")
+#     rent_list = [(2, 3), (3, 7), (8, 9), (1, 2), (9, 15), (23, 24), (16, 20)]
+#     res = rocket_rental(rent_list)
+#     print(f"Одна ракета удовлетворит все заяыки на этот день: {res}")
+
+
+# 3. Число компонент связности
+    print(graph_connected_components())
